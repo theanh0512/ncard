@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.user.ncard.ui.landing.confirmaccount.ConfirmAccountViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/email_verification"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewCodeSent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/open_sans"
+            android:paddingEnd="24dp"
+            android:paddingStart="24dp"
+            android:text="@string/fill_confirm_code_remind"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <com.bigbangbutton.editcodeview.EditCodeView
+            android:id="@+id/editCodeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="48dp"
+            app:codeLength="6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCodeSent"
+            app:textColor="@color/colorLightGrey"
+            app:textSize="@dimen/text_50sp" />
+
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_corner_button"
+            android:enabled="@{viewmodel.showProgress==false? true:false}"
+            android:fontFamily="@font/open_sans_bold"
+            android:letterSpacing="0.15"
+            android:onClick="@{() -> viewmodel.submit()}"
+            android:text="@string/submit"
+            android:textColor="@color/colorDarkWhite"
+            android:textSize="@dimen/text_17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editCodeView" />
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/space_24dp"
+            android:layout_height="@dimen/space_24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="0dp"
+            android:elevation="@dimen/space_2dp"
+            android:visibility="@{viewmodel.showProgress==false? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonSubmit"
+            app:layout_constraintEnd_toEndOf="@+id/buttonSubmit"
+            app:layout_constraintTop_toTopOf="@+id/buttonSubmit" />
+
+        <Button
+            android:id="@+id/buttonResend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner_button_orange"
+            android:fontFamily="@font/open_sans_bold"
+            android:letterSpacing="0.15"
+            android:onClick="@{() -> viewmodel.resend()}"
+            android:text="@string/resend"
+            android:textColor="@color/colorDarkWhite"
+            android:textSize="@dimen/text_17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSubmit" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

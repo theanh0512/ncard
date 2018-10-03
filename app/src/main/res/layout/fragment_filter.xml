@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/space_4dp"
+            android:paddingTop="@dimen/space_4dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar">
+
+            <TextView
+                android:id="@+id/textViewLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_view_filter_background_selector"
+                android:fontFamily="@font/open_sans"
+                android:paddingBottom="@dimen/space_4dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingStart="@dimen/space_16dp"
+                android:paddingTop="@dimen/space_4dp"
+                android:text="@string/location"
+                android:textAllCaps="false"
+                android:textColor="@drawable/text_view_filter_text_color_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewIndustry"
+                app:layout_constraintEnd_toStartOf="@+id/textViewIndustry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewIndustry" />
+
+            <TextView
+                android:id="@+id/textViewIndustry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_view_filter_background_selector"
+                android:fontFamily="@font/open_sans"
+                android:paddingBottom="@dimen/space_4dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingStart="@dimen/space_16dp"
+                android:paddingTop="@dimen/space_4dp"
+                android:text="@string/industry"
+                android:textAllCaps="false"
+                android:textColor="@drawable/text_view_filter_text_color_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewGender"
+                app:layout_constraintEnd_toStartOf="@+id/textViewGender"
+                app:layout_constraintStart_toEndOf="@+id/textViewLocation"
+                app:layout_constraintTop_toTopOf="@+id/textViewGender" />
+
+            <TextView
+                android:id="@+id/textViewGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_view_filter_background_selector"
+                android:fontFamily="@font/open_sans"
+                android:paddingBottom="@dimen/space_4dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingStart="@dimen/space_16dp"
+                android:paddingTop="@dimen/space_4dp"
+                android:text="@string/gender"
+                android:textAllCaps="false"
+                android:textColor="@drawable/text_view_filter_text_color_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNationality"
+                app:layout_constraintEnd_toStartOf="@+id/textViewNationality"
+                app:layout_constraintStart_toEndOf="@+id/textViewIndustry"
+                app:layout_constraintTop_toTopOf="@+id/textViewNationality" />
+
+            <TextView
+                android:id="@+id/textViewNationality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_view_filter_background_selector"
+                android:fontFamily="@font/open_sans"
+                android:paddingBottom="@dimen/space_4dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingStart="@dimen/space_16dp"
+                android:paddingTop="@dimen/space_4dp"
+                android:text="@string/nationality"
+                android:textAllCaps="false"
+                android:textColor="@drawable/text_view_filter_text_color_selector"
+                app:layout_constraintStart_toEndOf="@+id/textViewGender"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewIndustry"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_0dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewNationality"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_0dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewLocation"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_0dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewGender"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_0dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

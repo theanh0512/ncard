@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="showSender"
+            type="Boolean" />
+
+        <variable
+            name="transaction"
+            type="com.user.ncard.vo.TransactionLogDetail" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGrey"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Type"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp" />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                tools:text="transfer" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Amount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp" />
+
+            <TextView
+                android:id="@+id/textView67"
+                formatTransactionAmount="@{transaction.amount.amount.toString()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                tools:text="$1000" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`deposit`)? View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:id="@+id/textView68"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Payment Method"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`deposit`)? View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="@{transaction.paymentMethod}"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`deposit`)? View.VISIBLE:View.GONE}" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`withdraw`)? View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Receiving Info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`withdraw`)? View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="@{transaction.paymentMethod + `(` + transaction.paymentMethodInfo + `)`}"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`withdraw`)? View.VISIBLE:View.GONE}" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`withdraw`) || transaction.type.equalsIgnoreCase(`deposit`) ? View.VISIBLE:View.GONE}"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"/>
+
+            <TextView
+                android:id="@+id/textView71"
+                dateTime="@{transaction.createdAt}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                tools:text="2018-01-02" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`payment`)?View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Buy Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`payment`)?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:id="@+id/textView73"
+                dateTime="@{transaction.receiptTime}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`payment`)?View.VISIBLE:View.GONE}"
+                tools:text="2018-01-02" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)?View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Transfer Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                dateTime="@{transaction.createdAt}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)?View.VISIBLE:View.GONE}"
+                tools:text="2018-01-02" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)  &amp;&amp; transaction.status.equalsIgnoreCase(`succeeded`) ?View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Receipt Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)  &amp;&amp; transaction.status.equalsIgnoreCase(`succeeded`) ?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:id="@+id/textView75"
+                dateTime="@{transaction.receiptTime}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`) &amp;&amp; transaction.status.equalsIgnoreCase(`succeeded`) ?View.VISIBLE:View.GONE}"
+                tools:text="2018-01-02" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{(transaction.type.equalsIgnoreCase(`transfer`) || transaction.type.equalsIgnoreCase(`withdraw`)) &amp;&amp; transaction.status.equalsIgnoreCase(`refunded`) ?View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:id="@+id/textView76"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Refund Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{(transaction.type.equalsIgnoreCase(`transfer`) || transaction.type.equalsIgnoreCase(`withdraw`)) &amp;&amp; transaction.status.equalsIgnoreCase(`refunded`) ?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:id="@+id/textView77"
+                dateTime="@{transaction.receiptTime}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{(transaction.type.equalsIgnoreCase(`transfer`) || transaction.type.equalsIgnoreCase(`withdraw`)) &amp;&amp; transaction.status.equalsIgnoreCase(`refunded`) ?View.VISIBLE:View.GONE}"
+                tools:text="2018-01-02" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`cash_out_fee`) ||  transaction.type.equalsIgnoreCase(`cash_out`) ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Send Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`cash_out_fee`) || transaction.type.equalsIgnoreCase(`cash_out`) ?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                dateTime="@{transaction.createdAt}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`cash_out_fee`) || transaction.type.equalsIgnoreCase(`cash_out`) ? View.VISIBLE:View.GONE}"
+                tools:text="2018-01-02" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`cash_out`) ? View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:text="Receipt Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`cash_out`)  ? View.VISIBLE:View.GONE}" />
+
+            <TextView
+                dateTime="@{transaction.receiptTime}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`cash_out`)  ? View.VISIBLE:View.GONE}"
+                tools:text="2018-01-02" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tvSenderReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="24dp"
+            android:paddingHorizontal="16dp"
+            android:text="Receiver"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_17sp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`) ?View.VISIBLE:View.GONE}" />
+
+
+        <LinearLayout
+            android:id="@+id/lnSenderReceiver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)?View.VISIBLE:View.GONE}">
+
+            <ImageView
+                android:id="@+id/imvSenderReceiver"
+                android:layout_width="@dimen/space_32dp"
+                android:layout_height="@dimen/space_32dp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)?View.VISIBLE:View.GONE}"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toBottomOf="@+id/textView78"
+                app:srcCompat="@drawable/ic_chat" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp"
+                android:visibility="@{transaction.type.equalsIgnoreCase(`transfer`)?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                app:layout_constraintStart_toEndOf="@+id/imageView15"
+                app:layout_constraintTop_toTopOf="@+id/imageView15"
+                tools:text="Ha Dieu Hoa" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorWhite"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Status"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_17sp" />
+
+
+            <TextView
+                android:id="@+id/textView81"
+                formatStatusLog="@{transaction}"
+                showSender="@{showSender}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text_17sp"
+                tools:text="Successful" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tvWarningTransfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/refunded_to_payer_if_it_s_not_accepted_in_1_day_s"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="job"
+            type="com.user.ncard.vo.Job" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewDid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{job.did}"
+            android:visibility="@{job.did.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/imageView8"
+            tools:text="567889f" />
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:text="@{job.address}"
+            android:visibility="@{job.address.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/imageView12"
+            tools:text="Address" />
+
+        <TextView
+            android:id="@+id/textViewCompanyWebsite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:text="@{job.website}"
+            android:visibility="@{job.website.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            tools:text="user.com.sg" />
+
+        <TextView
+            android:id="@+id/textViewCompanyEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:text="@{job.companyEmail}"
+            android:visibility="@{job.companyEmail.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFax"
+            tools:text="com" />
+
+        <TextView
+            android:id="@+id/textViewFax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{job.fax}"
+            android:visibility="@{job.fax.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/imageView9"
+            tools:text="fax678" />
+
+        <TextView
+            android:id="@+id/textViewName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/industry"
+            android:textSize="@dimen/text_17sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStartDate" />
+
+        <TextView
+            android:id="@+id/textViewJobTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@{job.jobTitle}"
+            android:textSize="@dimen/text_17sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Job Role" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorDarkGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+        <TextView
+            android:id="@+id/textViewCompanyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{job.companyName}"
+            android:visibility="@{job.companyName.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewJobTitle"
+            tools:text="Company name" />
+
+        <TextView
+            android:id="@+id/textViewStartDate"
+            date="@{job.from}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.from.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyName"
+            tools:text="29/11/2017" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/space_16dp" />
+
+        <TextView
+            android:id="@+id/textViewIndustry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{job.industry}"
+            android:visibility="@{job.industry.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName2"
+            tools:text="Apparel" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.mobile.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewIndustry"
+            app:srcCompat="@drawable/ic_phone" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.tel1.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPhone"
+            app:srcCompat="@drawable/ic_mobile_1" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:visibility="@{job.tel2.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMobile1"
+            app:srcCompat="@drawable/ic_mobile_2" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.did.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMobile2"
+            app:srcCompat="@drawable/ic_did" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.fax.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDid"
+            app:srcCompat="@drawable/ic_fax" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.companyEmail.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFax"
+            app:srcCompat="@drawable/ic_email" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:visibility="@{job.website.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyEmail"
+            app:srcCompat="@drawable/ic_website" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:visibility="@{job.address.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyWebsite"
+            app:srcCompat="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/textViewPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{job.mobile}"
+            android:visibility="@{job.mobile.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/imageView5"
+            tools:text="12345678" />
+
+        <TextView
+            android:id="@+id/textViewMobile2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{job.tel2}"
+            android:visibility="@{job.tel2.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/imageView7"
+            tools:text="12345678" />
+
+        <TextView
+            android:id="@+id/textViewMobile1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{job.tel1}"
+            android:visibility="@{job.tel1.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/imageView6"
+            tools:text="1234789" />
+
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/affiliates_logo"
+            android:textSize="@dimen/text_17sp"
+            android:visibility="@{job.cert==null||job.cert.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/product_service"
+            android:textSize="@dimen/text_17sp"
+            android:visibility="@{job.media==null||job.media.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewLogo" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewLogo"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_80dp"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.cert==null||job.cert.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewProductService"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_80dp"
+            android:layout_marginTop="8dp"
+            android:visibility="@{job.media==null||job.media.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/description"
+            android:textSize="@dimen/text_17sp"
+            android:visibility="@{job.description.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewProductService" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{job.description}"
+            android:visibility="@{job.description.isEmpty()? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textView57"
+            tools:text="@string/description" />
+
+        <ImageView
+            android:id="@+id/imageViewNameCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:visibility="@{job.cardId==null || job.cardId == 0? View.INVISIBLE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewPen"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewPen"
+            app:layout_constraintTop_toTopOf="@+id/imageViewPen"
+            app:srcCompat="@drawable/ic_name_card" />
+
+        <ImageView
+            android:id="@+id/imageViewPen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pen_1" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

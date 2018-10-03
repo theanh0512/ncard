@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_item_create"
+        android:orderInCategory="101"
+        android:title="@string/create"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_item_update"
+        android:orderInCategory="101"
+        android:title="@string/update"
+        app:showAsAction="ifRoom" />
+
+</menu>

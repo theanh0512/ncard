@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="gift"
+            type="com.user.ncard.vo.GiftItem" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_0dp"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--<ImageView
+                    android:id="@+id/imageView14"
+                    imageUrlList="@{gift.imageUrls}"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_240dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/bike" />-->
+
+                <RelativeLayout
+                    android:id="@+id/rlViewPager"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_240dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorLightGrey" />
+
+                    <com.rd.PageIndicatorView
+                        android:id="@+id/pagerIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/viewPager"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:piv_animationType="scale"
+                        app:piv_count="0"
+                        app:piv_padding="4dp"
+                        app:piv_radius="4dp"
+                        app:piv_selectedColor="@color/colorWhite"
+                        app:piv_unselectedColor="@color/colorLightGrey"
+                        app:piv_viewPager="@id/viewPager" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@{gift.title}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_19sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/rlViewPager"
+                    tools:text="Huawei Nova 2i" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <TextView
+                    android:id="@+id/textViewVendor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@{gift.vendorName}"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+                    tools:text="pham" />
+
+                <TextView
+                    android:id="@+id/textViewPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@{@string/display_price(gift.price.amount)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_17sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVendor"
+                    tools:text="$300.0" />
+
+                <Button
+                    android:id="@+id/buttonBuy"
+                    android:layout_width="@dimen/space_64dp"
+                    android:layout_height="@dimen/space_40dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rounded_corner_button"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:letterSpacing="0.15"
+                    android:text="@string/buy"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorDarkWhite"
+                    android:textSize="@dimen/text_12sp"
+                    android:visibility="@{gift.stockQuantity==0? View.GONE : View.VISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewStock"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewPrice" />
+
+                <TextView
+                    android:id="@+id/textView65"
+                    fromHtml="@{gift.description}"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="@dimen/space_8dp"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewStock"
+                    tools:text="you can create an array of characters which has all of the characters that you wish to allow to be in the random string , then in a loop take a random position from the array and add append it to a stringBuilder . in the end , convert the stringBuilder to a string. you can create an array of characters which has all of the characters that you wish to allow to be in the random string , then in a loop take a random position from the array and add append it to a stringBuilder . in the end , convert the stringBuilder to a string." />
+
+                <TextView
+                    android:id="@+id/textViewStock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@{gift.stockQuantity==0? @string/out_of_stock : @string/display_num_item_in_stock(gift.stockQuantity)}"
+                    android:textColor="@{gift.stockQuantity==0? @color/colorRed :@color/colorBlack}"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPrice"
+                    tools:text="10 items in stock" />
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

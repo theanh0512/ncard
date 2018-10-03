@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.user.ncard.vo.User" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@{@string/display_name(user.firstName==null? @string/empty_string: user.firstName, user.lastName==null? @string/empty_string: user.lastName)}"
+            android:textSize="@dimen/text_19sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewReject"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Jacky Lee" />
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            imageUrl="@{user.profileImageUrl}"
+            android:layout_width="@dimen/space_48dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_8dp"
+            android:layout_marginStart="@dimen/space_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:id="@+id/imageViewReject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewAccept"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_reject" />
+
+        <ImageView
+            android:id="@+id/imageViewAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_accept" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_1dp"
+            android:layout_marginTop="@dimen/space_4dp"
+            android:background="@color/colorDarkGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewProfile" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "305017282111",
+    "firebase_url": "https://ncardproduction.firebaseio.com",
+    "project_id": "ncardproduction",
+    "storage_bucket": "ncardproduction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305017282111:android:29ac9c5abe1dcb62",
+        "android_client_info": {
+          "package_name": "com.user.ncard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305017282111-o99pj04224jk9chi89a7lhpf70lb6865.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.user.ncard",
+            "certificate_hash": "4956344ece3ed43add1e2979a7e2cddb7a465275"
+          }
+        },
+        {
+          "client_id": "305017282111-83cfukekqf9ka3pi89860q57rn4sttj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ9qcs-sNBgwixajxusopEnxe8qsgz09I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305017282111-83cfukekqf9ka3pi89860q57rn4sttj7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

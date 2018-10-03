@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.user.ncard.ui.card.namecard.EditNameCardViewModel" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_marginTop="-1800dp">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@{viewmodel.nameCard.get().id == 0? 24 : 0}"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/space_80dp">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/space_24dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="@dimen/space_100dp"
+                    android:layout_height="@dimen/space_100dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/your_name"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
+
+
+                <EditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().name}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/qualification"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+
+                <EditText
+                    android:id="@+id/editTextQualification"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().qualification}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/your_role"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextQualification" />
+
+
+                <EditText
+                    android:id="@+id/editTextRole"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().role}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/your_company"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextRole" />
+
+
+                <EditText
+                    android:id="@+id/editTextCompany"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:padding="@dimen/space_12dp"
+                    android:text="@={viewmodel.nameCard.get().company}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/your_address"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextCompany" />
+
+
+                <EditText
+                    android:id="@+id/editTextAddress"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:maxLines="2"
+                    android:inputType="text"
+                    android:padding="@dimen/space_12dp"
+                    android:text="@={viewmodel.nameCard.get().address}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/your_phone"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextAddress" />
+
+
+                <EditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().mobile}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/mobile1"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+
+                <EditText
+                    android:id="@+id/editTextMobile1"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().tel1}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/mobile2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextMobile1" />
+
+
+                <EditText
+                    android:id="@+id/editTextMobile2"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().tel2}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/did"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextMobile2" />
+
+
+                <EditText
+                    android:id="@+id/editTextDID"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().did}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/fax"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextDID" />
+
+
+                <EditText
+                    android:id="@+id/editTextFax"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().fax}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/your_email"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextFax" />
+
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().email}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/website"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+
+                <EditText
+                    android:id="@+id/editTextWebsite"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_48dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:maxLines="1"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().website}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/job_description"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextWebsite" />
+
+
+                <EditText
+                    android:id="@+id/editTextJobDesc"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:gravity="top|start"
+                    android:lines="4"
+                    android:maxLines="4"
+                    android:minLines="4"
+                    android:padding="@dimen/space_8dp"
+                    android:text="@={viewmodel.nameCard.get().description}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/product_service"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextJobDesc" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/space_24dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewAddMedia"
+                    android:layout_width="@dimen/space_60dp"
+                    android:layout_height="@dimen/space_60dp"
+                    android:layout_marginTop="@dimen/space_16dp"
+                    android:background="@drawable/dashed_border_button"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewMedia"
+                    app:srcCompat="@drawable/plus" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewMedia"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/affiliates_logo"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewAddMedia" />
+
+                <ImageView
+                    android:id="@+id/imageViewAddLogo"
+                    android:layout_width="@dimen/space_60dp"
+                    android:layout_height="@dimen/space_60dp"
+                    android:layout_marginTop="@dimen/space_16dp"
+                    android:background="@drawable/dashed_border_button"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewLogo"
+                    app:srcCompat="@drawable/plus" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewLogo"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+                <ImageView
+                    android:id="@+id/imageViewCardBackground"
+                    imageUrlRectangle="@{viewmodel.nameCard.get().backgroundUrl}"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_120dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/border_name_card_background"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewAddLogo"
+                    tools:srcCompat="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/textViewChooseCardBackground"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/choose_card_background"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="@dimen/text_17sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewCardBackground" />
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/name_card_image"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewChooseCardBackground" />
+
+                <ImageView
+                    android:id="@+id/imageViewCardFront"
+                    imageUrlFront="@{viewmodel.nameCard.get().frontUrl}"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_160dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/textView45"
+                    tools:srcCompat="@drawable/ic_card_front" />
+
+                <ImageView
+                    android:id="@+id/imageViewCardBack"
+                    imageUrlBack="@{viewmodel.nameCard.get().backUrl}"
+                    android:layout_width="@dimen/space_0dp"
+                    android:layout_height="@dimen/space_160dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewCardFront"
+                    tools:srcCompat="@drawable/ic_card_back" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
+

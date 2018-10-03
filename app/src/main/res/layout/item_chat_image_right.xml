@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/root"
+    style="@style/FrameRootChat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/rootView"
+        style="@style/FrameChat"
+        android:gravity="right|top">
+
+        <LinearLayout style="@style/BubbleChat.Right.Image">
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/TextName.Right"
+                android:text="James"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.user.ncard.ui.catalogue.views.SquareImageView
+                    android:id="@+id/imvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/ProgressBar"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imvAvatar"
+            style="@style/imv_avatar"
+            android:layout_marginEnd="@dimen/space_8dp"/>
+
+    </LinearLayout>
+
+    <com.user.ncard.ui.catalogue.views.RelativeTimeTextView
+        android:id="@+id/tvTime"
+        style="@style/TextTime"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/rootView"
+        android:layout_marginRight="60dp"
+        android:text="12:40" />
+
+</RelativeLayout>

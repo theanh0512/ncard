@@ -1,0 +1,183 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.user.ncard"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 14
+        //versionName "0.1.4"
+        versionName "1.0.9"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        // used by Room, to test migrations
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    buildToolsVersion '27.0.1'
+    lintOptions {
+        abortOnError false
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        app {
+            applicationId "com.user.ncard"
+        }
+        dev {
+            applicationId "com.user.ncard.dev"
+        }
+        app_new {
+            applicationId "com.user.ncard.prod"
+        }
+    }
+}
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta3'
+    kapt "com.android.databinding:compiler:$gradleVersion"
+
+    // Support libraries
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+
+    // Architecture components
+    implementation "android.arch.lifecycle:runtime:$rootProject.architectureComponentsVersion"
+    implementation "android.arch.lifecycle:extensions:$rootProject.architectureComponentsVersion"
+    implementation "android.arch.lifecycle:reactivestreams:$rootProject.architectureComponentsVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    kapt "android.arch.lifecycle:compiler:$rootProject.architectureComponentsVersion"
+    implementation "android.arch.persistence.room:runtime:$rootProject.architectureComponentsVersion"
+    kapt "android.arch.persistence.room:compiler:$rootProject.architectureComponentsVersion"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.architectureComponentsVersion"
+
+    //squareup
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+
+    //    implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
+
+    //dagger 2
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
+    implementation "com.google.dagger:dagger-android:$rootProject.dagger2Version"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger2Version"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger2Version"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+
+    //aws
+    implementation "com.amazonaws:aws-android-sdk-cognitoidentityprovider:$rootProject.awsVersion"
+    implementation "com.amazonaws:aws-android-sdk-s3:$rootProject.awsVersion"
+    implementation "com.bigbangbutton:editcodeview:" + rootProject.codeViewVersion
+    implementation "com.roughike:bottom-bar:" + rootProject.bottomBarVersion
+    implementation 'com.github.arimorty:floatingsearchview:2.1.1'
+    implementation "com.github.bumptech.glide:glide:" + rootProject.glideVersion
+    kapt "com.github.bumptech.glide:compiler:" + rootProject.glideVersion
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.18'
+    implementation 'com.romandanylyk:pageindicatorview:0.2.0@aar'
+
+    // UI
+    implementation 'com.google.android:flexbox:0.3.1'
+    implementation 'com.klinkerapps:link_builder:1.6.1'
+    implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.1.3'
+    implementation project(':boxing-impl-lib')
+    implementation('com.facebook.fresco:fresco:1.0.0') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.facebook.fresco:animated-gif:1.0.0'
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.1@aar'
+    implementation "com.squareup.okhttp3:logging-interceptor:3.8.1"
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.alexvasilkov:gesture-views:2.3.2'
+    implementation 'com.devbrackets.android:exomedia:4.0.3'
+    implementation "com.google.android.exoplayer:extension-okhttp:r2.4.3"
+    implementation 'com.writingminds:FFmpegAndroid:0.3.2'
+    implementation 'me.shaohui.advancedluban:library:1.3.5'
+    implementation 'com.mikhaellopez:circularimageview:3.0.2'
+    implementation ('me.piruin:quickaction:2.4.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation ('com.barryzhang:temptyview:0.0.1') {
+        exclude group: 'com.android.support'
+    }
+    compile('com.yalantis:ucrop:2.2.0') {
+        exclude group: 'com.android.support'
+        exclude group: 'com.squareup.okio'
+        exclude group: 'com.squareup.okhttp3'
+    }
+    implementation('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true
+    }
+    implementation 'com.romandanylyk:pageindicatorview:0.0.5'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //Chat
+    implementation ('com.quickblox:quickblox-android-sdk-chat:3.4.1'){
+        transitive = true
+    }
+    implementation 'com.quickblox:quickblox-android-sdk-content:3.4.1'
+    implementation 'com.quickblox:quickblox-android-sdk-core:3.4.1'
+    implementation ('com.quickblox:quickblox-android-sdk-messages:3.4.1') {
+        exclude group: 'com.google.android.gms'
+    }
+
+    //Notification
+    implementation 'com.google.android.gms:play-services-gcm:11.6.0'
+    implementation 'com.google.android.gms:play-services-places:11.6.0'
+
+    //payment
+    implementation 'com.stripe:stripe-android:5.1.0'
+
+    implementation 'com.google.firebase:firebase-messaging:11.6.0'
+    implementation 'com.google.firebase:firebase-core:11.6.0'
+
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+}

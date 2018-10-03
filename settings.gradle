@@ -1,0 +1,2 @@
+include ':app', ':boxing-lib', ':boxing-impl-lib'
+project(':boxing-impl-lib').projectDir = new File('boxing-impl')

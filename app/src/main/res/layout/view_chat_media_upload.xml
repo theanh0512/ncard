@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:padding="5dp">
+
+    <com.user.ncard.ui.catalogue.views.SquareImageView
+        android:id="@+id/imvImageMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_boxing_default_image"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/viewAudio"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@id/imvPlayPause"
+            style="@style/IconPlayPauseView.left"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:tint="@color/colorDarkBlue" />
+
+        <TextView
+            android:id="@+id/tvTimeDuration"
+            style="@style/TextMessage.Left"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textColor="@color/colorDarkBlue" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressUpload"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:indeterminateOnly="false"
+        android:max="100"
+        android:progressDrawable="@drawable/shape_progressbar_circle" />
+
+</RelativeLayout>

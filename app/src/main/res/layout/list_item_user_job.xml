@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="job"
+            type="com.user.ncard.vo.Job" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingBottom="@dimen/space_8dp">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="@dimen/space_12dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@{job.jobTitle}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Development Manager" />
+
+        <TextView
+            android:id="@+id/textViewJobStatus"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="@dimen/space_8dp"
+            android:layout_marginStart="@dimen/space_12dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@{job.companyName}"
+            android:textSize="@dimen/text_12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName"
+            tools:text="Web Designer at Singtel" />
+
+        <ImageView
+            android:id="@+id/imageViewNameCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{job.cardId==null || job.cardId == 0? View.INVISIBLE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.06999999"
+            app:srcCompat="@drawable/ic_name_card" />
+
+        <TextView
+            android:id="@+id/textViewDate"
+            jobDateTime="@{job}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_8dp"
+            android:textColor="@color/colorDarkBlue"
+            android:textSize="@dimen/text_12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewNameCard"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewNameCard"
+            app:layout_constraintTop_toTopOf="@+id/imageViewNameCard"
+            tools:text="2018.1 - Present" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

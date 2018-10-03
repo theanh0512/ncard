@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.user.ncard.vo.Friend" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingBottom="@dimen/space_8dp"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@{user.firstName == null ? user.email : @string/display_name(user.firstName, user.lastName)}"
+            android:textSize="@dimen/text_15sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewRemark"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewCheck"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="@+id/imageViewProfile"
+            tools:text="Jacky Lee" />
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            imageUrl="@{user.profileImageUrl}"
+            android:layout_width="@dimen/space_40dp"
+            android:layout_height="@dimen/space_40dp"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:layout_marginBottom="@dimen/space_8dp"
+            android:layout_marginStart="@dimen/space_16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/textViewRemark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@{user.remark}"
+            android:textSize="@dimen/text_12sp"
+            android:visibility="@{user.remark == null? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewCheck"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+            tools:text="Web Designer at Singtel" />
+
+        <ImageView
+            android:id="@+id/imageViewCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="@{user.isChecked? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_check" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

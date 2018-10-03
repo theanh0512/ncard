@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.user.ncard.ui.catalogue.views.SquareImageView
+            android:id="@+id/imvImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_boxing_default_image" />
+
+        <com.user.ncard.ui.catalogue.views.RectanglemageView
+            android:id="@+id/imvVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_boxing_default_image" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imvVideoPlay"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:padding="6dp"
+        android:src="@drawable/ic_boxing_play" />
+
+</RelativeLayout>

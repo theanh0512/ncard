@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.user.ncard.vo.User" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <TextView
+            android:id="@+id/textViewCard"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_32dp"
+            android:layout_marginStart="@dimen/space_32dp"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:background="@drawable/rounded_corner_edit_text"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_8dp"
+            android:paddingEnd="@dimen/space_32dp"
+            android:paddingStart="@dimen/space_48dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTopUpAmount"
+            tools:text="Visa 4242****" />
+
+        <EditText
+            android:id="@+id/editTextTopUpAmount"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_32dp"
+            android:layout_marginStart="@dimen/space_32dp"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:background="@drawable/rounded_corner_edit_text"
+            android:hint="@string/top_up_amount"
+            android:maxLines="1"
+            android:inputType="number"
+            android:padding="@dimen/space_8dp"
+            android:paddingEnd="@dimen/space_16dp"
+            android:paddingStart="@dimen/space_32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/dollar"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextTopUpAmount"
+            app:layout_constraintStart_toStartOf="@+id/editTextTopUpAmount"
+            app:layout_constraintTop_toTopOf="@+id/editTextTopUpAmount" />
+
+        <ImageView
+            android:id="@+id/imageViewCardLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCard"
+            app:layout_constraintStart_toStartOf="@+id/textViewCard"
+            app:layout_constraintTop_toTopOf="@+id/textViewCard"
+            app:srcCompat="@drawable/ic_visa" />
+
+        <Button
+            android:id="@+id/buttonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_corner_button"
+            android:fontFamily="@font/open_sans_bold"
+            android:letterSpacing="0.15"
+            android:text="@string/confirm"
+            android:textAllCaps="true"
+            android:textColor="@color/colorDarkWhite"
+            android:textSize="@dimen/text_17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCard" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/cancel"
+        android:textColor="@color/colorDarkerBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/done"
+        android:textColor="@color/colorDarkerBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_8dp"
+        android:layout_marginStart="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_8dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/gender"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/picker"
+        android:layout_width="@dimen/space_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView44" />
+
+</android.support.constraint.ConstraintLayout>

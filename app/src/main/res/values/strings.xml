@@ -1,0 +1,381 @@
+<resources>
+    <string-array name="genders_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <!--<string name="app_name">Cardline Staging</string>
+    <string name="application_name">Cardline Staging</string>-->
+    <string name="app_name">Cardline</string>
+    <string name="application_name">Cardline</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">SIGN IN</string>
+
+    //this is project number in googleAPI
+    //dev
+    <string name="gcm_defaultSenderId">1025119648299</string>
+    <string name="project_number">1025119648299</string>
+    <string name="api_key">AIzaSyDDIlBLdMMtv9Z_GV3tgaoHxiP3OFtMndA</string>
+    //production
+    <!--<string name="project_number">305017282111</string>-->
+    <!--<string name="api_key">AIzaSyAe0BU5oatNx7oHmX6W9lIxX6TNL58jNWo</string>-->
+    <!--<string name="gcm_defaultSenderId">305017282111</string>-->
+
+    <string name="create_an_account">Create an Account</string>
+    <string name="create_password">Create Password</string>
+    <string name="hint_email">Email Address</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_old_password">Old Password</string>
+    <string name="hint_new_password">New password</string>
+    <string name="hint_confirm_new_password">Confirm new password</string>
+    <string name="agree_to_terms">By registering you are agreeing to our terms and conditions and privacy policy</string>
+    <string name="title_activity_landing_page">LandingPage</string>
+    <string name="action_settings">Settings</string>
+    <string name="email_verification">Email Verification</string>
+    <string name="fill_confirm_code_remind">An email has sent to your email with one-time password, please fill in below.</string>
+    <string name="submit">SUBMIT</string>
+    <string name="resend">RESEND</string>
+    <string name="cd_logo">logo</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="signing_in_chat">Signing in chat...</string>
+    <string name="your_name_and_mobile">Your Name and Mobile</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name_mandatory">First Name *</string>
+    <string name="last_name_mandatory">Last Name *</string>
+    <string name="mobile">Mobile</string>
+    <string name="skip_for_now">Skip for now</string>
+    <string name="sign_in_camel">Sign In</string>
+    <string name="phone_login">Phone Login</string>
+    <string name="cardline_friends">Cardline Friends</string>
+    <string name="search_hint">Search…</string>
+    <string name="title_cards">Cards</string>
+    <string name="title_chats">Chats</string>
+    <string name="title_disscovery">Discovery</string>
+    <string name="title_me">Me</string>
+    <string name="friend_request">Friend Requests</string>
+    <string name="friend_recommendation">Friend Recommendation</string>
+    <string name="title_share_card">Share Card</string>
+    <string name="catalogue">Catalogue</string>
+    <string name="catalogue_business">Business Time</string>
+    <string name="catalogue_personal">Personal Time</string>
+    <string name="title_add_friend">Add a Name Card/Friend</string>
+    <string name="add_a_friend">Add a friend</string>
+    <string name="add_a_name_card">Add a Name Card</string>
+    <string name="search_by_name">Search</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="import_from_contact">Import from phone contacts</string>
+    <string name="scan_name_card">Scan Name Card</string>
+    <string name="manually_create">Manually Create</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="setting">Settings</string>
+    <string name="display_name">%s %s</string>
+    <string name="connect">Connect</string>
+    <string name="user_profile">User Profile</string>
+
+    <string name="status_none">none</string>
+    <string name="status_friend">friend</string>
+    <string name="status_pending">pending</string>
+    <string name="request_sent">Request Sent</string>
+    <string name="friend_added">Added</string>
+    <string name="friend_reject">reject</string>
+    <string name="friend_accept">accept</string>
+
+    <string name="empty_string"> </string>
+    <string name="no_friend_request">There are no friend requests</string>
+    <string name="location">Location</string>
+    <string name="industry">Industry</string>
+    <string name="industry_required">Industry *</string>
+    <string name="gender">Gender</string>
+    <string name="nationality">Nationality</string>
+    <string name="filter">Filter</string>
+    <string name="done">Done</string>
+    <string name="name_cards">Name Cards</string>
+    <string name="name_card">Name card</string>
+    <string name="add_new_member">Add a new member</string>
+    <string name="add">Add</string>
+    <string name="contact_info">CONTACT INFO</string>
+    <string name="email">Email</string>
+    <string name="qr_code">QR Code</string>
+    <string name="trace">JOB</string>
+    <string name="show_details">Show Details</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="more">More</string>
+    <string name="more_profile_info">More profile information</string>
+    <string name="group">Group</string>
+    <string name="set_remark">Set remarks</string>
+    <string name="country">Country</string>
+    <string name="birthday">Birthday</string>
+    <string name="please_input_your_remark">Please input your remark</string>
+    <string name="save">Save</string>
+    <string name="remark">Remark</string>
+    <string name="delete_friend">Delete Friend</string>
+    <string name="sure_to_delete">Are you sure to delete %s?</string>
+    <string name="clear">Clear</string>
+    <string name="friend_from_contact">Friends From Contact</string>
+    <string name="edit_name_card">Edit Name Card</string>
+    <string name="your_name">YOUR NAME *</string>
+    <string name="qualification">QUALIFICATION</string>
+    <string name="qualification_nocap">Qualification</string>
+    <string name="your_role">YOUR ROLE *</string>
+    <string name="your_company">YOUR COMPANY *</string>
+    <string name="your_address">YOUR ADDRESS</string>
+    <string name="your_phone">YOUR PHONE</string>
+    <string name="mobile1">MOBILE 1</string>
+    <string name="mobile2">MOBILE 2</string>
+    <string name="did">DID</string>
+    <string name="fax">FAX</string>
+    <string name="your_email">YOUR EMAIL *</string>
+    <string name="website">WEBSITE</string>
+    <string name="job_description">JOB DESCRIPTION</string>
+    <string name="preview">Preview</string>
+    <string name="media">MEDIA</string>
+    <string name="affiliates_logo">AFFILIATES LOGO</string>
+    <string name="permission_request_denied">Permission request denied</string>
+    <string name="choose_card_background">Choose Card Background</string>
+    <string name="sign_in_chat_fail">Failed to Sign In Chat Server!</string>
+    <string name="sign_up_chat_fail">Failed to Sign Up on Chat Server!</string>
+    <string name="reload">Reload</string>
+    <string name="loading">Loading...</string>
+
+    <string name="display_tel">Tel: %s</string>
+    <string name="display_mobile1">Mobile 1: %s</string>
+    <string name="display_mobile2">Mobile 2: %s</string>
+    <string name="display_did">DID: %s</string>
+    <string name="display_fax">FAX: %s</string>
+    <string name="display_job_status">%s at %s</string>
+    <string name="display_name_and_created_date">%s </string>
+    <string name="created_on">| Created on</string>
+
+    <string name="description">DESCRIPTION</string>
+    <string name="cardline">Cardline</string>
+    <string name="scan_method">Scan Method</string>
+    <string name="take_a_photo">Take a photo</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+
+    <string name="select_nationality">Select Nationality</string>
+    <string name="select_industry">Select Industry</string>
+    <string name="select_country">Select Country</string>
+
+    <!--Menu-->
+    <string name="send">Send</string>
+
+    <!-- Time format -->
+    <string name="just_now">Just now</string>
+    <string name="yesterday">yesterday</string>
+    <string name="tomorrow">tomorrow</string>
+    <string name="today">today</string>
+
+    <string name="groups">Groups</string>
+    <string name="group_name">Group name</string>
+    <string name="create">Create</string>
+    <string name="create_group">Create Group</string>
+    <string name="select_contact_cards">Select Contacts/Cards</string>
+    <string name="update">Update</string>
+    <string name="delete_group">Delete Group</string>
+    <string name="swipe_to_delete">Swipe left to delete</string>
+
+    <!--Catalogue post-->
+    <string name="title_detail">Details</string>
+    <string name="title_catalogue_business">Business Time</string>
+    <string name="title_catalogue_personal">Personal Time</string>
+    <string name="title_catalogue_business_my">My Business Timeline</string>
+    <string name="title_catalogue_personal_my">My Timeline</string>
+    <string name="title_catalogue_create_post">Post</string>
+    <string name="title_share">Share</string>
+    <string name="title_tags">Tags</string>
+    <string name="title_category">Category</string>
+    <string name="device_not_supported">Device not supported</string>
+    <string name="device_not_supported_message">FFmpeg is not supported on your device</string>
+    <string name="empty_command_toast">You cannot execute empty command</string>
+
+    <string name="start_typing">Start typing</string>
+    <string name="title_chat">Chats</string>
+    <string name="chat_attachment_error">Can\'t load chosen file</string>
+    <string name="summary_info">Summary Info</string>
+    <string name="job">Job</string>
+    <string name="job_role">JOB ROLE *</string>
+    <string name="company_name">COMPANY NAME *</string>
+    <string name="detailed_address">DETAILED ADDRESS</string>
+    <string name="tel_number">TEL NUMBER</string>
+    <string name="company_email">COMPANY EMAIL *</string>
+    <string name="product_service"><![CDATA[PRODUCTS & SERVICES]]></string>
+    <string name="edit_job">Edit Job</string>
+    <string name="create_job">Create Job</string>
+    <string name="start_date">START DATE *</string>
+    <string name="to">To</string>
+    <string name="end_date">END DATE</string>
+    <string name="i_currently_work_here">I currently work here</string>
+    <string name="delete_job">Delete Job</string>
+    <string name="my_name_card">My Name Cards</string>
+    <string name="alert_no_job">No jobs available for creating name cards</string>
+    <string name="warn_delete_job">Do you want to delete this job?</string>
+
+    <!--Chat-->
+    <string name="chat_audio">[Audio]</string>
+    <string name="chat_attachment">[Attachment]</string>
+    <string name="chat_video">[Video]</string>
+    <string name="chat_location">[Location]</string>
+    <string name="chat_credit">[Credit]</string>
+    <string name="chat_gift">[Gift]</string>
+    <string name="chat_image">[Image]</string>
+    <string name="title_select_friends">Select Friends</string>
+    <string name="title_select_friends_groups">Select Friends/Groups</string>
+    <string name="title_broadcast">Broadcast</string>
+    <string name="title_broadcast_detail">Broadcast Detail</string>
+    <string name="title_group_detail">Group Detail</string>
+    <string name="warn_broadcast_group_member">Your broadcast group should contain at least one member</string>
+    <string name="credit_status_check_out">Check it out!</string>
+    <string name="credit_status_refunded">Refunded</string>
+    <string name="credit_status_accepted">Accepted</string>
+    <string name="warn_refund">Refunded to payer if it’s not accepted in 1day(s).</string>
+    <string name="credit_des_sender_on_hold">Awaiting Receipt</string>
+    <string name="credit_des_refund">Credit Refunded</string>
+    <string name="credit_des_transfer_accept">Transfer Accepted</string>
+    <string name="credit_accept_success">Money was saved to your wallet.</string>
+    <string name="credit_reject_success">Money was refunded.</string>
+    <string name="gift_status_awaiting">Awaiting Receipt</string>
+    <string name="gift_status_accept">Gift Accepted</string>
+    <string name="gift_status_reject">Gift Expired</string>
+    <string name="gift_status_cashout">Gift Cashed Out</string>
+    <string name="gift_status_save">Gift Saved</string>
+    <string name="gift_status_accept_with_shipping">The gift will arrive in about 5 working days.</string>
+    <string name="title_delivery_address">Delivery Address</string>
+    <string name="gift_status_check_out">Check it out!</string>
+    <string name="gift_status_refunded">Refunded!</string>
+    <string name="gift_status_accepted">Accepted!</string>
+    <string name="title_credit_transfer">Credit Transfer</string>
+    <string name="title_gift_send">Gift</string>
+    <string name="gift_cashout_confirm">Cash out will be charge %.1f %% value of gift</string>
+
+    <string name="name_card_image">NAME CARD IMAGE</string>
+    <string name="by_profession">By Profession</string>
+    <string name="by_name">By Name</string>
+    <string name="display_mutual_friend">%d mutual friend(s)</string>
+    <string name="display_mutual_friend_in_profile">MUTUAL FRIENDS(%d)</string>
+    <string name="received">RECEIVED</string>
+    <string name="sent">SENT</string>
+    <string name="recommendation">Recommendations</string>
+    <string name="name_card_recommendation">Name Card Recommendation</string>
+    <string name="display_recommended_by">Recommended by %s</string>
+    <string name="display_friend_recommended_by">Recommended by %s %s</string>
+    <string name="sent_invitation">Your invitation has been sent successfully</string>
+    <string name="display_sent_sharing">%s has been sent!</string>
+    <string name="no_friend_recommendation">There is no friend recommendation</string>
+    <string name="accept_success">Accepted successfully</string>
+
+    //wallet
+    <string name="e_wallet">E-Wallet</string>
+    <string name="my_g1_balance">My G1 Balance</string>
+    <string name="top_up">Top Up</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="transfer">Transfer</string>
+    <string name="transaction">Transactions</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="payment_security">Payment Security</string>
+    <string name="display_balance">S$ %s</string>
+    <string name="display_transaction_amount_minus">-%s</string>
+    <string name="display_transaction_amount_plus">+%s</string>
+    <string name="e_wallet_title">E-Wallet</string>
+    <string name="top_up_amount">Top Up Amount</string>
+    <string name="dollar">$</string>
+    <string name="confirm">confirm</string>
+    <string name="display_last_4_digit">%s****</string>
+    <string name="add_new_card">Add new card</string>
+    <string name="password_less_than_8">Password must have at least 8 characters long.</string>
+    <string name="password_invalid_pattern">Password must contain capital character, character, number and special character</string>
+    <string name="code_resent">Code resent. Please fill in below.</string>
+    <string name="incorrect_verification_code">Incorrect verification code. Please resubmit</string>
+
+    <string name="create_payment_password">Create Payment Password</string>
+    <string name="set_payment_password">Set Payment Password</string>
+    <string name="input_payment_password">Input payment password</string>
+    <string name="you_retype_a_different_password_please_try_again">You retype a different password, please try again</string>
+    <string name="reinput_payment_password">Reinput payment password</string>
+    <string name="payment_password_created">Payment password is created</string>
+    <string name="change_payment_password">Change Payment Password</string>
+    <string name="forget_payment_password">Forget Payment Password</string>
+    <string name="enter_payment_password">Enter Payment Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="forget_password_no_question_mark">Forget Password</string>
+    <string name="wrong_password">Wrong Password</string>
+    <string name="change_password_successfully">Change Password Successfully</string>
+    <string name="forget_password_instruction">Fill in your account email address. An email will be sent to you with a one-time password</string>
+    <string name="change_pass_title">Change Password</string>
+    <string name="space_string" />
+    <string name="next">next</string>
+    <string name="display_send_cash_to">Send money to %s %s</string>
+    <string name="cash_transfer">Cash Transfer</string>
+    <string name="transfer_amount">Transfer Amount</string>
+    <string name="note">Note</string>
+    <string name="transfer_sucessfully">Transfer Successfully!</string>
+
+    //Gift
+    <string name="my_gift_purchased">My Gift Purchased</string>
+    <string name="my_gifts">My Gifts</string>
+    <string name="shop">Shop</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="display_price">$%s</string>
+    <string name="buy">Buy</string>
+    <string name="confirm_purchase">Confirm Purchase</string>
+    <string name="x">X</string>
+    <string name="quantity">quantity</string>
+    <string name="amount_to_pay">amount to pay</string>
+    <string name="make_payment">make payment</string>
+    <string name="refunded_to_payer_if_it_s_not_accepted_in_1_day_s">Refunded to payer if it\'s not accepted in 1 day(s)</string>
+    <string name="purchase_gift_success">Purchased gift successfully!</string>
+    <string name="not_enough_balance_to_request_transaction">You do not have enough balance to request this transaction</string>
+    <string name="message">Message</string>
+    <string name="display_send_gift_to">Send gift to %s %s</string>
+    <string name="send_gift">Send Gift</string>
+    <string name="out_of_stock">Out of stock</string>
+    <string name="display_num_item_in_stock">%d items in stock</string>
+    <string name="sorry_out_of_stock">Sorry. We are out of stock.</string>
+    <string name="only_item_left">Sorry, only %d item(s) left</string>
+    <string name="go_to_symbol"><![CDATA[>]]></string>
+    <string name="succeeded">Payment Successful</string>
+    <string name="successful">Successful</string>
+
+    //Transaction Log
+    <string name="type_deposit">deposit</string>
+    <string name="type_payment">payment</string>
+    <string name="type_transfer">transfer</string>
+    <string name="status_refunded">refunded</string>
+    <string name="transaction_detail">Transaction Detail</string>
+    <string name="account_number">Account Number</string>
+    <string name="account">Account</string>
+    <string name="name">Name</string>
+    <string name="choose_bank">Choose Bank</string>
+    <string name="withdraw_amount">Withdraw Amount</string>
+    <string name="money_withdraw_notice">Money will be withdrawn to your bank account within 5 working days</string>
+    <string name="mandatory_field_remind">Please fill in all the necessary information before submit</string>
+    <string name="fill_in_all_info_to_submit">Please fill in all the necessary information before submit</string>
+    <string name="logout">Logout</string>
+    <string name="warn_credit_transfer_no_pass">You have to create E-Wallet password before creating transaction</string>
+    <string name="title_withdraw">Withdraw</string>
+    <string name="not_match_password">Confirmed password is not correct</string>
+    <string name="input_valid_email">Please input a valid email</string>
+
+    <!--Me-->
+    <string name="my_job">My jobs</string>
+    <string name="my_timeline">My Timeline</string>
+    <string name="my_busineess_timeline">My Business Timeline</string>
+    <string name="warn_add_group_name">Please add Group Name</string>
+    <string name="choose_at_least_1_to_share">Please choose at least 1 friend to share</string>
+    <string name="are_you_sure_to_quit">Are you sure you want to quit editing?</string>
+
+    <string name="job_updated_like_to_update_name_card">Job updated! Would you like to update the name card as well?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="no_user_found">No User Found</string>
+    <string name="no_group_found">No Group Found</string>
+    <string name="present">Present</string>
+
+    <string name="display_job_time">%s - %s</string>
+    <string name="no_gift_purchased">No gifts purchased</string>
+    <string name="no_transactions_log">No transactions log</string>
+    <string name="invalid_qr_code">Invalid QR Code</string>
+</resources>

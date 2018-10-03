@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.user.ncard.vo.CatalogueComment" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="@dimen/space_8dp"
+        android:background="@color/colorLightGrey"
+        android:paddingLeft="@dimen/space_8dp"
+        android:paddingTop="4dp">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imvAvatar"
+            style="@style/imv_avatar"
+            android:layout_width="@dimen/imv_size_avatar_comment"
+            android:layout_height="@dimen/imv_size_avatar_comment"
+            app:avatarUrl="@{item.ownerImageUrl}" />
+
+        <LinearLayout
+            android:id="@+id/lnContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@+id/imvAvatar"
+            android:orientation="vertical"
+            android:paddingRight="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@{String.valueOf(item.ownerName)}"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="@dimen/text_12sp" />
+
+                <com.user.ncard.ui.catalogue.views.RelativeTimeTextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/tvName"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="10h 40'"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12sp"
+                    app:timeAgo="@{String.valueOf(item.createdAt)}" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(item.content)}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_12sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/tvSpace"
+            style="@style/divider_horizontal"
+            android:layout_below="@id/lnContent"
+            android:layout_marginTop="4dp" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.user.ncard.ui.me.ewallet.EWalletViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <EditText
+            android:id="@+id/editTextWithdrawAmount"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_32dp"
+            android:layout_marginStart="@dimen/space_32dp"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:background="@drawable/rounded_corner_edit_text"
+            android:hint="@string/withdraw_amount"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:padding="@dimen/space_8dp"
+            android:paddingEnd="@dimen/space_16dp"
+            android:paddingStart="@dimen/space_32dp"
+            android:text="@={viewModel.amount}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/dollar"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextWithdrawAmount"
+            app:layout_constraintStart_toStartOf="@+id/editTextWithdrawAmount"
+            app:layout_constraintTop_toTopOf="@+id/editTextWithdrawAmount" />
+
+        <EditText
+            android:id="@+id/editTextChooseBank"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_32dp"
+            android:layout_marginStart="@dimen/space_32dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner_edit_text"
+            android:hint="@string/choose_bank"
+            android:maxLines="1"
+            android:padding="@dimen/space_8dp"
+            android:paddingEnd="@dimen/space_16dp"
+            android:paddingStart="@dimen/space_32dp"
+            android:text="@={viewModel.bank}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextWithdrawAmount" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_32dp"
+            android:layout_marginStart="@dimen/space_32dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner_edit_text"
+            android:hint="@string/name"
+            android:maxLines="1"
+            android:padding="@dimen/space_8dp"
+            android:paddingEnd="@dimen/space_16dp"
+            android:paddingStart="@dimen/space_32dp"
+            android:text="@={viewModel.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextChooseBank" />
+
+        <EditText
+            android:id="@+id/editTextAccountNumber"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_32dp"
+            android:layout_marginStart="@dimen/space_32dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner_edit_text"
+            android:hint="@string/account_number"
+            android:maxLines="1"
+            android:padding="@dimen/space_8dp"
+            android:paddingEnd="@dimen/space_16dp"
+            android:paddingStart="@dimen/space_32dp"
+            android:text="@={viewModel.accountNumber}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+        <Button
+            android:id="@+id/buttonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:background="@{viewModel.enableConfirm==true?@drawable/rounded_corner_button:@drawable/rounded_corner_button_disabled}"
+            android:enabled="@{viewModel.enableConfirm}"
+            android:fontFamily="@font/open_sans_bold"
+            android:letterSpacing="0.15"
+            android:text="@string/confirm"
+            android:textAllCaps="true"
+            android:textColor="@color/colorDarkWhite"
+            android:textSize="@dimen/text_17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAccountNumber" />
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/space_24dp"
+            android:layout_height="@dimen/space_24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="0dp"
+            android:visibility="gone"
+            android:elevation="@dimen/space_2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonConfirm"
+            app:layout_constraintEnd_toEndOf="@+id/buttonConfirm"
+            app:layout_constraintTop_toTopOf="@+id/buttonConfirm" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

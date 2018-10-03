@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/root"
+    style="@style/FrameRootChat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/rootView"
+        style="@style/FrameChat"
+        android:gravity="right|top">
+
+        <LinearLayout
+            style="@style/BubbleChat.Right"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorWhite"
+            android:minWidth="150dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/TextName.Right"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="3dp"
+                android:text=""
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_chat_transfer" />
+
+                <TextView
+                    android:id="@+id/tvMessage"
+                    style="@style/TextMessage.Left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="$50.00 From Alexey" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                style="@style/TextStatus"
+                android:layout_marginTop="2dp"
+                android:text="Check it out" />
+
+        </LinearLayout>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imvAvatar"
+            style="@style/imv_avatar"
+            android:layout_marginEnd="@dimen/space_8dp" />
+
+    </LinearLayout>
+
+    <com.user.ncard.ui.catalogue.views.RelativeTimeTextView
+        android:id="@+id/tvTime"
+        style="@style/TextTime"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/rootView"
+        android:layout_marginRight="60dp"
+        android:text="12:40" />
+
+</RelativeLayout>

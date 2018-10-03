@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.user.ncard.vo.User" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/open_sans"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:text="@{user.nameInContact==null? @string/display_name(user.firstName, user.lastName) : user.nameInContact}"
+            android:textSize="@dimen/text_19sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewStatus"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Jacky Lee" />
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            imageUrl="@{user.profileImageUrl}"
+            android:layout_width="@dimen/space_48dp"
+            android:layout_height="@dimen/space_48dp"
+            android:layout_marginEnd="@dimen/space_8dp"
+            android:layout_marginStart="@dimen/space_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/textViewSummary"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--android:layout_marginTop="4dp"-->
+        <!--android:text="@{user.summary}"-->
+        <!--android:textSize="@dimen/text_12sp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/imageViewProfile"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/textViewCategoryName"-->
+        <!--tools:text="Web Designer at Singtel" />-->
+
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@{user.status.equals(@string/status_pending)? @string/request_sent : @string/friend_added }"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/text_13sp"
+            android:visibility="@{user.status.equals(@string/status_none)? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewName"
+            tools:text="Request Sent" />
+
+        <ImageView
+            android:id="@+id/imageViewAddFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:visibility="@{user.status.equals(@string/status_none)? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_add_green" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_1dp"
+            android:layout_marginTop="@dimen/space_4dp"
+            android:background="@color/colorDarkGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewProfile" />
+
+        <TextView
+            android:id="@+id/textViewMutualFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@{user.mutualFriendCount==null? @string/display_mutual_friend(0): @string/display_mutual_friend(user.mutualFriendCount)}"
+            android:textSize="@dimen/text_12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+            tools:text="2 mutual friend(s)" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

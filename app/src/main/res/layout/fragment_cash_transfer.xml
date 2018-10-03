@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="friend"
+            type="com.user.ncard.vo.Friend" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/container_me"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:background="@drawable/background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+            <ImageView
+                android:id="@+id/imageViewProfile"
+                imageUrl="@{friend.profileImageUrl}"
+                android:layout_width="@dimen/space_100dp"
+                android:layout_height="@dimen/space_100dp"
+                android:layout_marginTop="@dimen/space_32dp"
+                android:elevation="@dimen/space_2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSendTo"
+                tools:srcCompat="@mipmap/ic_launcher_round" />
+
+            <TextView
+                android:id="@+id/textViewSendTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="@{@string/display_send_cash_to(friend.firstName, friend.lastName)}"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Send money to Pham" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_0dp"
+            android:background="@color/colorDarkerWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_me">
+
+            <EditText
+                android:id="@+id/editTextTransferAmount"
+                android:layout_width="@dimen/space_0dp"
+                android:layout_height="@dimen/space_48dp"
+                android:layout_marginEnd="@dimen/space_32dp"
+                android:layout_marginStart="@dimen/space_32dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:hint="@string/transfer_amount"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:padding="@dimen/space_8dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingStart="@dimen/space_32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/dollar"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextTransferAmount"
+                app:layout_constraintStart_toStartOf="@+id/editTextTransferAmount"
+                app:layout_constraintTop_toTopOf="@+id/editTextTransferAmount" />
+
+            <EditText
+                android:id="@+id/editTextNote"
+                android:layout_width="@dimen/space_0dp"
+                android:layout_height="@dimen/space_48dp"
+                android:layout_marginEnd="@dimen/space_32dp"
+                android:layout_marginStart="@dimen/space_32dp"
+                android:layout_marginTop="@dimen/space_16dp"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:hint="@string/note"
+                android:maxLines="1"
+                android:padding="@dimen/space_8dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingStart="@dimen/space_32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTransferAmount" />
+
+            <Button
+                android:id="@+id/buttonConfirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_32dp"
+                android:layout_marginStart="@dimen/space_32dp"
+                android:layout_marginTop="@dimen/space_24dp"
+                android:background="@drawable/rounded_corner_button_disabled"
+                android:enabled="false"
+                android:fontFamily="@font/open_sans_bold"
+                android:letterSpacing="0.15"
+                android:text="@string/confirm"
+                android:textColor="@color/colorDarkWhite"
+                android:textSize="@dimen/text_17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNote" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="@dimen/space_24dp"
+                android:layout_height="@dimen/space_24dp"
+                android:layout_marginEnd="8dp"
+                android:elevation="@dimen/space_2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonConfirm"
+                app:layout_constraintEnd_toEndOf="@+id/buttonConfirm"
+                app:layout_constraintTop_toTopOf="@+id/buttonConfirm" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

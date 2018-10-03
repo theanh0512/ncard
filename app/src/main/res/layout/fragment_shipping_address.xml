@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.user.ncard.ui.chats.shipping.ShippingAddressViewModel" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar"
+                android:elevation="2dp"
+                app:layout_scrollFlags="scroll|enterAlways|snap" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <LinearLayout
+            android:id="@+id/srl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/space_24dp"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <EditText
+                android:id="@+id/edtAttend"
+                style="@style/EditTextShipping"
+                android:hint="Attend To"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.attend}" />
+
+            <EditText
+                android:id="@+id/edtContactNumber"
+                style="@style/EditTextShipping"
+                android:hint="Contact Number"
+                android:inputType="number"
+                android:text="@={viewModel.contactNumber}" />
+
+            <EditText
+                android:id="@+id/edtDiliveryAddress"
+                style="@style/EditTextShipping"
+                android:hint="Delivery Address"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.diliveryAddress}" />
+
+            <EditText
+                android:id="@+id/edtZipCode"
+                style="@style/EditTextShipping"
+                android:hint="Zip Code"
+                android:inputType="number"
+                android:text="@={viewModel.zipCode}" />
+
+            <EditText
+                android:id="@+id/edtRemark"
+                style="@style/EditTextShipping"
+                android:hint="Remark"
+                android:inputType="text"
+                android:text="@={viewModel.remark}" />
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_corner_button"
+                android:fontFamily="@font/open_sans_bold"
+                android:letterSpacing="0.15"
+                android:onClick="@{viewModel.clickConfirm}"
+                android:text="@string/confirm"
+                android:textColor="@color/colorDarkWhite"
+                android:textSize="@dimen/text_17sp" />
+
+        </LinearLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

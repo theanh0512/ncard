@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.user.ncard.ui.catalogue.main.CatalogueMainViewModel" />
+
+    </data>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:background="@color/colorWhite"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="@dimen/space_8dp"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="space_around">
+
+        <LinearLayout
+            android:id="@+id/viewCategory"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_filter"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.category}"
+                android:textColor="@color/colorDarkBlue"
+                android:textSize="@dimen/text_12sp" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/space_8dp"
+                android:src="@drawable/ic_triangle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewShare"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_filter"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.share}"
+                android:textColor="@color/colorDarkBlue"
+                android:textSize="@dimen/text_12sp" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/space_8dp"
+                android:src="@drawable/ic_triangle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewTags"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_filter"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.tags}"
+                android:textColor="@color/colorDarkBlue"
+                android:textSize="@dimen/text_12sp" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/space_8dp"
+                android:src="@drawable/ic_filter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_filter"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year"
+                android:textColor="@color/colorDarkBlue"
+                android:textSize="@dimen/text_12sp" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/space_8dp"
+                android:src="@drawable/ic_triangle" />
+        </LinearLayout>
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>

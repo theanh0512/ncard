@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="gift"
+            type="com.user.ncard.vo.MyGiftData" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@{gift.product.title}"
+            android:textSize="@dimen/text_15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewQuantity"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Jacky Lee" />
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            imageUrlList="@{gift.product.imageUrls}"
+            android:layout_width="@dimen/space_40dp"
+            android:layout_height="@dimen/space_40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="@dimen/space_16dp"
+            android:layout_marginTop="@dimen/space_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/textViewQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_8dp"
+            android:background="@drawable/rounded_corner_button_darker_blue"
+            android:paddingBottom="@dimen/space_2dp"
+            android:paddingEnd="@dimen/space_4dp"
+            android:paddingStart="@dimen/space_4dp"
+            android:text="@{gift.product.count.toString()}"
+            android:textColor="@color/colorWhite"
+            android:visibility="@{(gift.product.count == null || gift.product.count == 0 || gift.product.count == 1)? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSend"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2" />
+
+        <Button
+            android:id="@+id/buttonSend"
+            android:layout_width="@dimen/space_48dp"
+            android:layout_height="@dimen/space_32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_corner_button"
+            android:fontFamily="@font/open_sans_bold"
+            android:letterSpacing="0.15"
+            android:text="@string/send"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkWhite"
+            android:textSize="@dimen/text_12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/space_0dp"
+            android:layout_height="@dimen/space_1dp"
+            android:background="@color/colorDarkGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

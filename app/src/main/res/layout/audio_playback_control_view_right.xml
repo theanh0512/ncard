@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/progress_relativelayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/exo_linear_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@id/imvPlayPause"
+            style="@style/IconPlayPauseView.Right" />
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:id="@+id/tvTimeDuration"
+                style="@style/TextMessage.Right"
+                android:layout_centerVertical="true"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tvTimePosition"
+                style="@style/TextMessage.Right"
+                android:layout_centerVertical="true"
+                android:text="" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

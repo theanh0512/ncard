@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1025119648299",
+    "firebase_url": "https://ncard-186705.firebaseio.com",
+    "project_id": "ncard-186705",
+    "storage_bucket": "ncard-186705.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025119648299:android:29ac9c5abe1dcb62",
+        "android_client_info": {
+          "package_name": "com.user.ncard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025119648299-1r8lcvc0tofe03j20tk2ebevfsuce8sn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfnEzXVCTQlfusST19E04l_tCu8-9RLDg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

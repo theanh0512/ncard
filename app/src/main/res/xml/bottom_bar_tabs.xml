@@ -1,0 +1,22 @@
+<tabs>
+    <tab
+        icon="@drawable/icon_card"
+        id="@+id/tab_card"
+        title="Cards" />
+    <tab
+        icon="@drawable/icon_chat"
+        id="@+id/tab_chat"
+        title="Chats" />
+    <tab
+        icon="@drawable/ic_scan_card"
+        id="@+id/tab_scan"
+        title="Scan" />
+    <tab
+        icon="@drawable/icon_discovery"
+        id="@+id/tab_discovery"
+        title="Discovery" />
+    <tab
+        icon="@drawable/icon_me"
+        id="@+id/tab_me"
+        title="Me" />
+</tabs>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite246">
+
+    <TextView
+        android:id="@+id/textViewCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/space_8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/open_sans"
+        android:padding="@dimen/space_4dp"
+        android:text="@string/x"
+        android:textColor="@color/colorGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_8dp"
+        android:layout_marginStart="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_8dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/confirm_purchase"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/amount_to_pay"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+    <TextView
+        android:id="@+id/textView59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/quantity"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_12sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewAmount"
+        app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+    <TextView
+        android:id="@+id/textViewAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/text_19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
+        tools:text="S$ 3000.00" />
+
+    <ImageView
+        android:id="@+id/imageViewMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAmount"
+        app:layout_constraintStart_toEndOf="@+id/textViewAmount"
+        app:layout_constraintTop_toTopOf="@+id/textViewAmount"
+        app:srcCompat="@drawable/ic_minus_in_circle" />
+
+    <TextView
+        android:id="@+id/textViewTotalAmount"
+        android:layout_width="@dimen/space_32dp"
+        android:layout_height="@dimen/space_32dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rounded_corner_edit_text"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewMinus"
+        app:layout_constraintStart_toEndOf="@+id/imageViewMinus"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMinus"
+        tools:text="10" />
+
+    <ImageView
+        android:id="@+id/imageViewPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewMinus"
+        app:layout_constraintStart_toEndOf="@+id/textViewTotalAmount"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMinus"
+        app:srcCompat="@drawable/ic_plus_circle" />
+
+    <Button
+        android:id="@+id/buttonMakePayment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corner_button"
+        android:fontFamily="@font/open_sans_bold"
+        android:letterSpacing="0.15"
+        android:text="@string/make_payment"
+        android:textColor="@color/colorDarkWhite"
+        android:textSize="@dimen/text_17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAmount" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_16dp"
+        android:text="@string/refunded_to_payer_if_it_s_not_accepted_in_1_day_s"
+        android:textSize="@dimen/text_12sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/buttonMakePayment"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMakePayment" />
+
+</android.support.constraint.ConstraintLayout>

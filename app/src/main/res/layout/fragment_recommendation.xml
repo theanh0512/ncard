@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textViewFriendRecommendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorLightGrey"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:paddingBottom="@dimen/space_4dp"
+                    android:paddingEnd="@dimen/space_0dp"
+                    android:paddingStart="@dimen/space_8dp"
+                    android:paddingTop="@dimen/space_4dp"
+                    android:text="@string/friend_recommendation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_15sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewCardlineFriend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="0dp" />
+
+                <TextView
+                    android:id="@+id/textViewNameCardRecommendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorLightGrey"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:paddingBottom="@dimen/space_4dp"
+                    android:paddingEnd="@dimen/space_0dp"
+                    android:paddingStart="@dimen/space_8dp"
+                    android:paddingTop="@dimen/space_4dp"
+                    android:text="@string/name_card_recommendation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_15sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewNameCards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_240dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="0dp" />
+
+                <TextView
+                    android:id="@+id/textViewNoFriendRecommendation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/no_friend_recommendation"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_19sp"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
